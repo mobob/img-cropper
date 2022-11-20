@@ -2,7 +2,8 @@
 
 # little utility that crops and resizes files subdirectories, uses imagemagick
 
-for FILE in */*.jpg; do
+# match files in local dir, and subdirectories
+for FILE in {,**/}*.jpg; do
 
 #magick identify "$FILE"
 width=`magick identify -format "%[fx:w]" "$FILE"`
